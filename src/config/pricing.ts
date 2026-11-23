@@ -1,0 +1,110 @@
+/**
+ * Centralized pricing configuration.
+ * Admin catalog in Supabase should mirror these values.
+ * Source of truth: Service_Update_Doc.md
+ */
+
+export const pricing = {
+  audioCall: { min45: 11000, min60: 12500, min75: 14000 },
+  videoCall: { min45: 14000, min60: 16000, min75: 21000 },
+  /** Legacy consultation channel — not in public service catalog */
+  whatsapp: { q3: 497, q6: 777, q10: 1111 },
+  addons: {
+    kundli20: 299,
+    luckyColorNumber: 497,
+    shubhMuhrat: 497,
+    missingNumberRemedy: 917,
+    nickName: 497,
+    extraNames: 497,
+  },
+  nameCorrection: {
+    standard: 2987,
+    standardOriginal: 7500,
+    withBlueprint: 5957,
+    withBlueprintOriginal: 15051,
+    nameCheck: 373,
+    nameCheckOriginal: 1100,
+  },
+  luckyNumber: {
+    vehicle: 1499,
+    vehicleColor: 497,
+    vehiclePurchaseDate: 1097,
+    mobile: 1499,
+    flat: 1097,
+  },
+  baby: {
+    perfectName: 3437,
+    perfectNameOriginal: 5100,
+    blueprint: 5957,
+    blueprintOriginal: 7500,
+    cSectionEssential: 3437,
+    cSectionComplete: 3167,
+    cSectionPremium: 5507,
+  },
+  relationship: { analysis: 917 },
+  pyaarShastra: { price: 299, originalPrice: 699, kundaliAddon: 299 },
+  reports: {
+    kundaliSingle: 299,
+    kundaliSingleOriginal: 699,
+    kundaliDouble: 497,
+    kundaliDoubleOriginal: 1200,
+    kundaliTriple: 597,
+    kundaliTripleOriginal: 1800,
+    varshphal: 699,
+  },
+  business: {
+    nameCorrection: 4967,
+    phoneNumber: 1457,
+    tagline: 1457,
+    partnerCompat: 1997,
+    companyRegistration: 1997,
+    bankAccount: 1997,
+    landPurchase: 1997,
+    plotAnalysis: 1457,
+    exhibitionStall: 917,
+    commercial: 2447,
+  },
+  vastu: {
+    departmental: 4987,
+    ceoCabin: 2447,
+    management: 1997,
+    cashCounter: 1997,
+    interiorColors: 1997,
+    officeRemote: 3977,
+    officeOnsite: 9987,
+  },
+  shop: {
+    blueSapphire: 15999,
+    blueSapphireOriginal: 19999,
+    sriYantra: 2499,
+    sriYantraOriginal: 3499,
+    pearl: 4999,
+    pearlOriginal: 6999,
+    rudraksha: 1999,
+    rudrakshaOriginal: 2499,
+    navratna: 24999,
+    navratnaOriginal: 29999,
+    vedicBook: 999,
+    vedicBookOriginal: 1299,
+    yellowSapphire: 12999,
+    yellowSapphireOriginal: 15999,
+    lakshmiYantra: 1999,
+    lakshmiYantraOriginal: 2999,
+    freeShippingThreshold: 999,
+  },
+} as const;
+
+export const formatINR = (value: number): string =>
+  `₹${value.toLocaleString("en-IN")}`;
+
+export type Pricing = typeof pricing;
+
+/** Build payment URL with service title, amount, and form type. */
+export const payLink = (service: string, amount: number, formType?: string) => {
+  const params = new URLSearchParams({
+    service,
+    amount: String(amount),
+  });
+  if (formType) params.set("formType", formType);
+  return `/payment?${params.toString()}`;
+};

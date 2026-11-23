@@ -1,0 +1,17 @@
+# Project architecture
+
+- Name Correction package cards read prices and checkout destinations from the shared service catalog so page offers and checkout summaries stay aligned.
+- Name Correction's celebrity-and-reviews section is a dedicated presentation component directly below its banner, keeping trust content separate from checkout offers.
+- Legacy dynamic admin queries reuse the managed client through an isolated compatibility adapter; generated schema files and database access policies remain untouched.
+- PDF drawing helpers accept fully resolved report inputs with complete branding; partial branding remains supported only at the generation entry point.
+- Name Correction uses dedicated expert and podcast components immediately after trust content, followed by press/philosophy and catalog-backed packages, keeping ad-page presentation independent of checkout pricing.
+- Name report checkout uses the minimal layout and omits cross-service add-ons; report confirmation is scoped by service identity so other checkout flows stay unchanged.
+- Name report offers share presentation metadata across selector, review and confirmation, and the existing payment flow supports inline booking with a pre-payment review stage so ad visitors stay on the report page.
+- Mobile Name Report booking reuses existing form controls and validation in a service-scoped stepped dialog; desktop retains inline checkout so field and payment behavior remain consistent.
+- Blueprint checkout uses the single-person Name Correction schema even for legacy two-person form URLs; keep its existing internal service identity for order compatibility while using shared catalog presentation labels.
+- Site images are bundled as regular Vite imports from src/assets, so they work on any host.
+- Varshphal page offers use the shared service catalog for edition, price and checkout destination so the report page and checkout stay consistent; presentation colors remain scoped to the report page.
+- Varshphal inline and standalone checkout reuse Payment with a service-scoped schema and additional-report snapshot normalization, so both report subjects reach the existing order flow without affecting other services.
+- Varshphal report CTAs share page-level booking state and mount checkout only on first activation, preserving entered details when returning to the report while avoiding initial payment downloads.
+- Signed payment callbacks take priority over background reconciliation; use the checkout success handler on every device and an immediate 303 server fallback with a short-lived fragment handoff, keeping fulfilment asynchronous on the eagerly loaded confirmation page so payment recovery cannot block navigation.
+- Thank You uses an immediate, unanimated receipt layout and shared report-confirmation policy; invoice status updates in place without blocking the receipt or loading the general navigation layout.
