@@ -12,6 +12,7 @@ import { Textarea } from "@/components/ui/textarea";
 import serviceCsectionDates from "@/assets/service-csection-dates.png";
 import { pricing, formatINR } from "@/config/pricing";
 
+import { brand } from "@/config/brand";
 const faqs = [
   {
     q: "1. What is C-Section baby date selection?",
@@ -119,7 +120,7 @@ const CSectionDates = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const message = `C-Section Date Guidance Request:\nParent Name: ${formData.parentName}\nContact: ${formData.contact}\nEmail: ${formData.email}\nCity: ${formData.city}\nTentative Dates: ${formData.tentativeDates}\nHospital: ${formData.hospitalName}`;
-    window.open(`https://wa.me/919667305557?text=${encodeURIComponent(message)}`, "_blank");
+    window.open(`https://wa.me/${brand.whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
   };
 
   return (

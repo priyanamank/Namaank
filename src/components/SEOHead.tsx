@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 
+import { brand } from "@/config/brand";
 interface SEOHeadProps {
   title?: string;
   description?: string;
@@ -81,8 +82,8 @@ const SEOHead = ({
         postalCode: "201305",
         addressCountry: "IN",
       },
-      telephone: "+91-96673-05577",
-      email: "service@ankshaastra.in",
+      telephone: brand.phoneSchema,
+      email: brand.email,
       sameAs: [
         "https://instagram.com",
         "https://youtube.com",

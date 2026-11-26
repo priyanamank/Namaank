@@ -1,5 +1,6 @@
 import Layout from "@/components/layout/Layout";
 
+import { brand } from "@/config/brand";
 const PrivacyPolicy = () => {
   return (
     <Layout>
@@ -90,7 +91,7 @@ const PrivacyPolicy = () => {
               <li>Opt-out of promotional communications at any time.</li>
               <li>Withdraw consent for data processing (may affect service delivery).</li>
             </ul>
-            <p>To exercise these rights, contact us at <a href="tel:+919667305577" className="text-primary hover:underline">966 730 5577</a>.</p>
+            <p>To exercise these rights, contact us at <a href={brand.phoneHref} className="text-primary hover:underline">{brand.phoneDigits}</a>.</p>
 
             <h2 className="font-display text-xl font-semibold text-foreground mt-8">7. Cookies and Tracking</h2>
             <p>Our website may use cookies to:</p>
@@ -115,7 +116,7 @@ const PrivacyPolicy = () => {
             <h2 className="font-display text-xl font-semibold text-foreground mt-8">12. Contact Us</h2>
             <p>For privacy-related questions or concerns:</p>
             <p className="font-semibold">Ankshaastra Occult Experts LLP</p>
-            <p>Phone: <a href="tel:+919667305577" className="text-primary hover:underline">9667305577</a></p>
+            <p>Phone: <a href={brand.phoneHref} className="text-primary hover:underline">{brand.phoneDigits}</a></p>
           </div>
         </div>
       </section>

@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { contactFormSchema, type ContactFormData } from "@/lib/validations";
 
+import { brand } from "@/config/brand";
 const ContactPage = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState<ContactFormData>({
@@ -87,16 +88,16 @@ const ContactPage = () => {
     {
       icon: Phone,
       title: "Phone",
-      value: "+91 96673 05577",
+      value: brand.phone,
       description: "Mon-Sat, 9AM-7PM IST",
-      action: "tel:+919667305577",
+      action: brand.phoneHref,
     },
     {
       icon: MessageCircle,
       title: "WhatsApp",
-      value: "+91 96673 05577",
+      value: brand.phone,
       description: "Quick responses",
-      action: "https://wa.me/919667305577",
+      action: brand.whatsappHref,
     },
     {
       icon: Mail,
@@ -243,7 +244,7 @@ const ContactPage = () => {
                       className={`w-full px-4 py-3 rounded-lg bg-muted border text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all ${
                         errors.phone ? "border-destructive" : "border-border"
                       }`}
-                      placeholder="+91 96673 05577"
+                      placeholder="+91 98765 43210"
                     />
                     {errors.phone && (
                       <p id="phone-error" className="mt-1 text-sm text-destructive">{errors.phone}</p>

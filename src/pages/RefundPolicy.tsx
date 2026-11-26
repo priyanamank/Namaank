@@ -1,5 +1,6 @@
 import Layout from "@/components/layout/Layout";
 
+import { brand } from "@/config/brand";
 const RefundPolicy = () => {
   return (
     <Layout>
@@ -33,7 +34,7 @@ const RefundPolicy = () => {
             <h3 className="font-display text-lg font-medium text-foreground">Before Report Generation</h3>
             <ul className="list-disc pl-6 space-y-1">
               <li>If you wish to cancel your order, you must do so within <strong>2 hours</strong> of payment</li>
-              <li>Contact us immediately at <a href="tel:+919667305577" className="text-primary hover:underline">966 730 5577</a> with your order details</li>
+              <li>Contact us immediately at <a href={brand.phoneHref} className="text-primary hover:underline">{brand.phoneDigits}</a> with your order details</li>
               <li>Cancellation is subject to verification that work has not yet begun</li>
               <li>If work has already commenced, cancellation will not be possible</li>
             </ul>
@@ -50,7 +51,7 @@ const RefundPolicy = () => {
             <h2 className="font-display text-xl font-semibold text-foreground mt-8">5. Payment Issues</h2>
             <p>In case of payment failure or technical errors where money is debited but order is not confirmed:</p>
             <ul className="list-disc pl-6 space-y-1">
-              <li>Contact us immediately at <a href="tel:+919667305577" className="text-primary hover:underline">9667305577</a></li>
+              <li>Contact us immediately at <a href={brand.phoneHref} className="text-primary hover:underline">{brand.phoneDigits}</a></li>
               <li>Provide transaction details and payment proof</li>
               <li>We will verify with our payment gateway and resolve within 7–10 business days</li>
               <li>Refunds for genuine payment errors will be processed to the original payment method</li>
@@ -62,7 +63,7 @@ const RefundPolicy = () => {
             <h2 className="font-display text-xl font-semibold text-foreground mt-8">7. Contact for Queries</h2>
             <p>If you have questions about this policy before purchasing:</p>
             <p className="font-semibold">Ankshaastra Occult Experts LLP</p>
-            <p>Phone: <a href="tel:+919667305577" className="text-primary hover:underline">9667305577</a></p>
+            <p>Phone: <a href={brand.phoneHref} className="text-primary hover:underline">{brand.phoneDigits}</a></p>
           </div>
         </div>
       </section>

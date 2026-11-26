@@ -1,5 +1,6 @@
 import Layout from "@/components/layout/Layout";
 
+import { brand } from "@/config/brand";
 const TermsOfService = () => {
   return (
     <Layout>
@@ -54,7 +55,7 @@ const TermsOfService = () => {
             <h2 className="font-display text-xl font-semibold text-foreground mt-8">8. Contact Information</h2>
             <p>For questions about these Terms of Service:</p>
             <p className="font-semibold">Ankshaastra Occult Experts LLP</p>
-            <p>Phone: <a href="tel:+919667305577" className="text-primary hover:underline">9667305577</a></p>
+            <p>Phone: <a href={brand.phoneHref} className="text-primary hover:underline">{brand.phoneDigits}</a></p>
           </div>
         </div>
       </section>

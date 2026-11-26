@@ -5,25 +5,27 @@
  * the Vercel dashboard without code changes. Safe defaults are provided.
  */
 
+import { brand } from "@/config/brand";
+
 const str = (value: string | undefined, fallback: string): string =>
   value && value.trim() !== "" ? value : fallback;
 
 const env = import.meta.env;
 
 export const business = {
-  // Primary support phone (E.164 without "+", e.g. 919667305577)
-  supportPhone: str(env.VITE_SUPPORT_PHONE, "919667305577"),
+  // Primary support phone (E.164 without "+", e.g. 917909652568)
+  supportPhone: str(env.VITE_SUPPORT_PHONE, brand.phoneIntl),
   // Primary WhatsApp number (can differ from support phone)
-  whatsappNumber: str(env.VITE_WHATSAPP_NUMBER, "919667305577"),
+  whatsappNumber: str(env.VITE_WHATSAPP_NUMBER, brand.whatsappNumber),
   // Secondary WhatsApp used by some lead-capture pages
-  leadWhatsappNumber: str(env.VITE_LEAD_WHATSAPP_NUMBER, "919667305557"),
-  supportEmail: str(env.VITE_SUPPORT_EMAIL, "service@ankshaastra.in"),
-  contactEmail: str(env.VITE_CONTACT_EMAIL, "contact@ankshaastra.com"),
+  leadWhatsappNumber: str(env.VITE_LEAD_WHATSAPP_NUMBER, brand.whatsappNumber),
+  supportEmail: str(env.VITE_SUPPORT_EMAIL, brand.email),
+  contactEmail: str(env.VITE_CONTACT_EMAIL, brand.email),
   // Razorpay public key (frontend checkout)
   razorpayKeyId: str(env.VITE_RAZORPAY_KEY_ID, ""),
   // Optional API base URL
   apiBaseUrl: str(env.VITE_API_BASE_URL, ""),
-  businessAddress: str(env.VITE_BUSINESS_ADDRESS, "India"),
+  businessAddress: str(env.VITE_BUSINESS_ADDRESS, brand.address),
 } as const;
 
 /** Build a tel: href from the configured support phone. */

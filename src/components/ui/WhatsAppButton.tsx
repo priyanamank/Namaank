@@ -1,10 +1,11 @@
 import { MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
+import { brand } from "@/config/brand";
 const WhatsAppButton = () => {
   return (
     <motion.a
-      href="https://wa.me/919667305577?text=Hi, I would like to know more about your services."
+      href={`${brand.whatsappHref}?text=Hi, I would like to know more about your services.`}
       target="_blank"
       rel="noopener noreferrer"
       className="whatsapp-btn"
