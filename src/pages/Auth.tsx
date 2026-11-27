@@ -82,7 +82,7 @@
 
 // //   return (
 // //     <>
-// //       <SEOHead title="Sign In or Sign Up | Ankshaastra" description="Access your Ankshaastra dashboard, orders, invoices and reports." />
+// //       <SEOHead title="Sign In or Sign Up" description="Access your Namaank dashboard, orders, invoices and reports." noindex />
 // //       <div className="min-h-screen flex items-center justify-center bg-background px-4 py-16">
 // //         <div className="w-full max-w-md">
 // //           <Link to="/" className="flex items-center justify-center gap-2 mb-6 text-primary hover:opacity-80">
@@ -266,7 +266,7 @@
 
 //   return (
 //     <>
-//       <SEOHead title="Sign In or Sign Up | Ankshaastra" description="Access your Ankshaastra dashboard, orders, invoices and reports." />
+//       <SEOHead title="Sign In or Sign Up" description="Access your Namaank dashboard, orders, invoices and reports." noindex />
 //       <div className="min-h-screen flex items-center justify-center bg-background px-4 py-16">
 //         <div className="w-full max-w-md">
 //           <Link to="/" className="flex items-center justify-center gap-2 mb-6 text-primary hover:opacity-80">
@@ -505,7 +505,7 @@ const Auth = () => {
 
   return (
     <>
-      <SEOHead title="Sign In or Sign Up | Ankshaastra" description="Access your Ankshaastra dashboard, orders, invoices and reports." />
+      <SEOHead title="Sign In or Sign Up" description="Access your Namaank dashboard, orders, invoices and reports." noindex />
       <div className="min-h-screen flex items-center justify-center bg-background px-4 py-16">
         <div className="w-full max-w-md">
           <Link to="/" className="flex items-center justify-center gap-2 mb-6 text-primary hover:opacity-80">
