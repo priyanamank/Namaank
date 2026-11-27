@@ -58,7 +58,7 @@ const ResetPassword = () => {
 
   return (
     <>
-      <SEOHead title="Reset Password | Ankshaastra" description="Set a new password for your account." />
+      <SEOHead title="Reset Password" description="Set a new password for your account." noindex />
       <div className="min-h-screen flex items-center justify-center bg-background px-4 py-16">
         <div className="w-full max-w-md">
           <Link to="/" className="flex items-center justify-center gap-2 mb-6 text-primary hover:opacity-80">
