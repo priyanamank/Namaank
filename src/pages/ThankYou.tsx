@@ -84,7 +84,7 @@
 //   return (
 //     <div className="thank-you-page min-h-dvh">
 //       <SEOHead
-//         title="Thank You — Payment Successful | Ankshaastra"
+//         title="Thank You — Payment Successful"
 //         description="Payment received. Your invoice, confirmation and personalised report will be sent by email."
 //         canonical="/thank-you"
 //       />
@@ -203,9 +203,10 @@ const ThankYou = () => {
   return (
     <div className="thank-you-page min-h-dvh">
       <SEOHead
-        title="Thank You — Payment Successful | Ankshaastra"
+        title="Thank You — Payment Successful"
         description="Payment received. Your invoice, confirmation and personalised report will be sent by email."
         canonical="/thank-you"
+        noindex
       />
       <header className="flex h-14 items-center justify-center bg-background px-4">
         <Link to="/" aria-label="Ankshaastra home">
