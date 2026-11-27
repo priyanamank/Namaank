@@ -8,12 +8,14 @@ interface SEOHeadProps {
   ogImage?: string;
   ogType?: string;
   jsonLd?: Record<string, unknown>;
+  /** Keep this page out of Google (checkout, login, admin, thank-you). */
+  noindex?: boolean;
 }
 
 const SITE_NAME = "Namaank";
 const DEFAULT_DESCRIPTION = "Namaank – Name Check, Name Correction, Baby Name reports and C-Section date guidance based on numerology.";
-// TODO: set VITE_SITE_URL to the final Namaank domain (e.g. https://namank.com)
-const BASE_URL = ((import.meta.env.VITE_SITE_URL as string | undefined) || "https://namank.com").replace(/\/$/, "");
+// Production domain. Can be overridden with VITE_SITE_URL (e.g. for a preview deployment).
+const BASE_URL = ((import.meta.env.VITE_SITE_URL as string | undefined) || "https://namaank.in").replace(/\/$/, "");
 const DEFAULT_OG_IMAGE = `${BASE_URL}/og-image.jpg`;
 
 const SEOHead = ({
@@ -23,8 +25,9 @@ const SEOHead = ({
   ogImage = DEFAULT_OG_IMAGE,
   ogType = "website",
   jsonLd,
+  noindex = false,
 }: SEOHeadProps) => {
-  const fullTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} – Empower Your Name`;
+  const fullTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} – Name. Number. Destiny.`;
 
   useEffect(() => {
     document.title = fullTitle;
@@ -40,6 +43,7 @@ const SEOHead = ({
     };
 
     setMeta("description", description);
+    setMeta("robots", noindex ? "noindex, nofollow" : "index, follow");
     setMeta("og:title", fullTitle, "property");
     setMeta("og:description", description, "property");
     setMeta("og:type", ogType, "property");
@@ -71,10 +75,6 @@ const SEOHead = ({
       name: "Namaank",
       description: DEFAULT_DESCRIPTION,
       url: BASE_URL,
-      founder: {
-        "@type": "Person",
-        name: "Himansshu Agarwal",
-      },
       address: {
         "@type": "PostalAddress",
         streetAddress: "Unit No. O-622, Block E, Eye of Noida, Sector-140A",
@@ -84,12 +84,7 @@ const SEOHead = ({
       },
       telephone: brand.phoneSchema,
       email: brand.email,
-      sameAs: [
-        "https://instagram.com",
-        "https://youtube.com",
-        "https://facebook.com",
-        "https://linkedin.com",
-      ],
+      sameAs: Object.values(brand.socials).filter((u) => { try { return new URL(u).pathname.length > 1; } catch { return false; } }),
     };
 
     const script = document.createElement("script");
@@ -102,7 +97,7 @@ const SEOHead = ({
       const s = document.querySelector('script[data-seo-jsonld]');
       if (s) s.remove();
     };
-  }, [fullTitle, description, canonical, ogImage, ogType, jsonLd]);
+  }, [fullTitle, description, canonical, ogImage, ogType, jsonLd, noindex]);
 
   return null;
 };
