@@ -3,7 +3,7 @@ import SEOHead from "@/components/SEOHead";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Sparkles, Award, Users, BookOpen, Heart, ArrowRight, Star, CheckCircle2 } from "lucide-react";
-import expertImg from "@/assets/expert-himansshu.jpg";
+import expertImg from "@/assets/expert-himansshu.webp";
 
 const stats = [
   { icon: Users, value: "48k", label: "Global Consultations" },
