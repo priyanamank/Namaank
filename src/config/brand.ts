@@ -7,7 +7,7 @@
 // ---- Edit only these lines ----
 const PHONE = "7909652568";            // 10-digit mobile number, no spaces
 const COUNTRY_CODE = "91";
-const EMAIL = "service@namank.in";
+const EMAIL = "service@namaank.in";
 const ADDRESS = "Unit No. O-622, Block E, Eye of Noida, Sector-140A, Noida-201305, India";
 const HOURS = "Mon–Sun · 8:30 AM – 8:30 PM";
 // -------------------------------
