@@ -584,7 +584,7 @@
 
 //   return (
 //     <>
-//       <SEOHead title="Operations Console" description="Ankshaastra centralized operations admin." />
+//       <SEOHead title="Operations Console" description="Namaank operations admin." noindex />
 //       {/* Admin gets its own minimal shell — no public marketing nav (Home, Services,
 //           Reports, Podcasts, Shop, etc.) and no customer-support chat bubble. Those
 //           were built for site visitors, not ops staff, and the chat bubble was
@@ -1411,7 +1411,7 @@ const AdminLayout = () => {
 
   return (
     <>
-      <SEOHead title="Operations Console" description="Ankshaastra centralized operations admin." />
+      <SEOHead title="Operations Console" description="Namaank operations admin." noindex />
       {/* Admin gets its own minimal shell — no public marketing nav (Home, Services,
           Reports, Podcasts, Shop, etc.) and no customer-support chat bubble. Those
           were built for site visitors, not ops staff, and the chat bubble was
