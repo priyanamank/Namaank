@@ -99,7 +99,7 @@
 
 //   return (
 //     <Layout>
-//       <SEOHead title="My Dashboard | Ankshaastra" description="Manage your profile, orders and invoices." />
+//       <SEOHead title="My Dashboard" description="Manage your profile, orders and invoices." noindex />
 //       <div className="container mx-auto px-4 py-12 max-w-5xl">
 //         <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
 //           <div>
@@ -322,7 +322,7 @@
 
 //   return (
 //     <Layout>
-//       <SEOHead title="My Dashboard | Ankshaastra" description="Manage your profile, orders and invoices." />
+//       <SEOHead title="My Dashboard" description="Manage your profile, orders and invoices." noindex />
 //       <div className="container mx-auto px-4 py-12 max-w-5xl">
 //         <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
 //           <div>
@@ -538,7 +538,7 @@
 
 //   return (
 //     <Layout>
-//       <SEOHead title="My Dashboard | Ankshaastra" description="Manage your profile, orders and invoices." />
+//       <SEOHead title="My Dashboard" description="Manage your profile, orders and invoices." noindex />
 //       <div className="container mx-auto px-4 py-12 max-w-5xl">
 //         <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
 //           <div>
@@ -751,7 +751,7 @@ const Dashboard = () => {
 
   return (
     <Layout>
-      <SEOHead title="My Dashboard | Ankshaastra" description="Manage your profile, orders and invoices." />
+      <SEOHead title="My Dashboard" description="Manage your profile, orders and invoices." noindex />
       <div className="container mx-auto px-4 py-12 max-w-5xl">
         <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
           <div>
