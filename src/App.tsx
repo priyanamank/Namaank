@@ -1,5 +1,6 @@
 
 import { Suspense, lazy } from "react";
+import SEOHead from "@/components/SEOHead";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -83,7 +84,7 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/disclaimer" element={<Disclaimer />} />
             <Route path="/reports/:slug" element={<DynamicServicePage />} />
-            <Route path="/payment" element={<Payment />} />
+            <Route path="/payment" element={<><SEOHead title="Checkout" description="Secure checkout." noindex /><Payment /></>} />
             <Route path="/thank-you" element={<ThankYou />} />
             <Route path="/about" element={<About />} />
             <Route path="/blog" element={<Blog />} />
